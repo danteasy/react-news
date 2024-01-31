@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+/* font-family: "Poppins", sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap");
+/* font-family: "Rubik", sans-serif; */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #9796f0; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #9796f0,
+        #fbc7d4
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #9796f0,
+        #fbc7d4
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    padding: 0 10px;
+    font-weight: 400;
+}
+
+.article-image {
+    max-width: min(100%, 300px);
+}
+
+.article:hover .article-image > img {
+    transform: scale(1.1);
+}
+.glassy-bg {
+    background: rgba(255, 255, 255, 0.17);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.article:hover .article-title,
+.article:hover .article-source {
+    color: white;
+    text-decoration: underline;
+    background: black;
+}
+
+.loading {
+    opacity: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::before {
+    content: "";
+    width: 80%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 10px;
+    background: rgb(86, 82, 82);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+}
+
+.loading::after {
+    content: "";
+    top: 0;
+    transform: translateX(100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    animation: slide 1s infinite;
+
+    background: -moz-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(125, 185, 232, 0) 100%
+    ); /* FF3.6+ */
+    background: -webkit-gradient(
+        linear,
+        left top,
+        right top,
+        color-stop(0%, rgba(255, 255, 255, 0)),
+        color-stop(50%, rgba(255, 255, 255, 0.8)),
+        color-stop(99%, rgba(128, 186, 232, 0)),
+        color-stop(100%, rgba(125, 185, 232, 0))
+    ); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(125, 185, 232, 0) 100%
+    ); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(125, 185, 232, 0) 100%
+    ); /* Opera 11.10+ */
+    background: -ms-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(125, 185, 232, 0) 100%
+    ); /* IE10+ */
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(128, 186, 232, 0) 99%,
+        rgba(125, 185, 232, 0) 100%
+    ); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+input.glassy-bg {
+    border-radius: 20px;
+}
+
+.glassy-notification {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(0, 0, 0, 0.27);
+}
